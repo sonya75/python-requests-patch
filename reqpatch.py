@@ -11,7 +11,7 @@ def addrequiredheaders(req):
 def modifyheaders(headers):
     browser=user_agents.parse(headers["User-Agent"]).browser
     if browser.family not in ["Chrome","Firefox","Opera"]:
-        print "Currently only works with Firefox and Opera"
+        print "Currently only works with Chrome, Firefox and Opera"
         raise Exception("Browser not recognized")
     if browser.family=="Chrome" or browser.family=="Other":
         defaultheaders=["Host","Connection","Upgrade-Insecure-Requests","User-Agent","Accept","Accept-Encoding","Accept-Language"]
