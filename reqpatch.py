@@ -10,7 +10,7 @@ def addrequiredheaders(req):
         d["Host"]=urlparse.urlparse(req.url).netloc
 def modifyheaders(headers):
     browser=user_agents.parse(headers["User-Agent"]).browser
-    if browser.family not in ["Firefox","Opera","Chrome"]:
+    if browser.family not in ["Chrome","Firefox","Opera"]:
         print "Currently only works with Firefox and Opera"
         raise Exception("Browser not recognized")
     if browser.family=="Chrome" or browser.family=="Other":
